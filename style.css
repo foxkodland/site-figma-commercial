@@ -190,7 +190,7 @@ main > *{
 
 .blocks {
     display: flex;
-    gap: 50px;
+    gap: 30px;
 }
 
 .blocks h2 {
