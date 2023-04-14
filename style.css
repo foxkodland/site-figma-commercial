@@ -44,11 +44,18 @@ a {
     color: var(--text_white);
     font-size: 45px;
     font-family: 'Montserrat', sans-serif;
+    margin-bottom: 30px;
+}
+
+.h2--black {
+    color: black;
 }
 
 .empty {
     flex: 1;
 }
+
+
 
 
 /* header */
@@ -100,7 +107,7 @@ main > *{
 
 
 /* первый тёмный блок */
-.first_block {
+.section_1 {
     background-color: var(--background_dark_blue);
     
     display: flex;
@@ -110,24 +117,21 @@ main > *{
     padding-bottom: 100px;
 }
 
-.first_block__left {
+.s1__left {
     width: 50%;
 }
 
-.first_block__left .h2 {
-    margin-bottom: 30px;
-}
 
-.first_block__left p {
+.s1__left p {
     color: var(--text_gray);
     margin-bottom: 50px;
 }
 
-.first_block .yellow_button {
+.section_1 .yellow_button {
     margin-right: 30px;
 }
 
-.first_block__right img {
+.s1__right img {
     width: 100%;
 }
 
@@ -135,39 +139,35 @@ main > *{
 
 
 /* How we work - второй блок */
-.second {
+.section_2 {
     background-color: var(--background_accent);
     display: flex;
 }
 
-.second__left {
+.s2__left {
     width: 40%;
     min-width: 350px;
 }
 
-.second__left .h2 {
-    color: black;
-    margin-bottom: 30px;
-}
 
-.second__left p {
+.s2__left p {
     color: #282938;
     margin-bottom: 30px;
 }
 
-.second__left a {
+.s2__left a {
     color: blue;
     font-weight: 700;
 }
 
-.second__right {
+.s2__right {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
     gap: 30px;
 }
 
-.second__right .card {
+.s2__right .card {
     width: 35%;
     display: flex;
     flex-direction: column;
@@ -187,10 +187,9 @@ main > *{
     margin-bottom: 50px;
 }
 
-.s3__header > * {
+.s3__header > a {
     color: black;
 }
-
 
 .blocks {
     display: flex;
@@ -231,8 +230,6 @@ main > *{
 
 
 
-
-/* right */
 .blocks__right__top_box {
     background-image: url(images/3\ Card_2.png);
     background-size: cover;
@@ -241,16 +238,29 @@ main > *{
     margin-bottom: 30px;
 }
 
-.blocks__right__top_box .content {
-    background-color: rgba(28,30,83, 0.8);
-    height: 100%;
-
+.blocks__right__top_box {
+    position: relative;    
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     gap: 30px;
 
     padding-left: 30px;
+}
+
+.blocks__right__top_box > * {
+    position: relative;
+    z-index: 1;
+}
+
+.blocks__right__top_box::after { /*  синий фон между фоном и текстом */
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(28,30,83, 0.8);
 }
 
 .blocks__right__bot_box img {
@@ -267,8 +277,6 @@ main > *{
     flex-direction: column;
     align-items: center;
     gap: 30px;
-
-    padding: var(--padding_all_block);
 }
 
 .section_4 > p{
@@ -276,10 +284,8 @@ main > *{
 }
 
 .section_4 > .h2 {
-    color: black;
     width: 50%;
     text-align: center;
-    margin-bottom: 20px;
 }
 
 .section_4__cards {
@@ -311,11 +317,6 @@ main > *{
     justify-content: space-between;
 
     background-color: rgba(244,246,252, 0.5);
-}
-
-.section_5 .h2 {
-    color: black;
-    margin-bottom: 30px;
 }
 
 .s5__right {
@@ -362,11 +363,6 @@ main > *{
     width: 35%;
 }
 
-.s6__left .h2 {
-    color: black;
-    margin-bottom: 30px;
-}
-
 .s6__left a{
     color: blue;
     font-weight: 700;
@@ -379,6 +375,7 @@ main > *{
 
 .s6__right .row {
     display: flex;
+    align-items: center;
     gap: 30px;
 
     padding-bottom: 30px;
@@ -389,11 +386,11 @@ main > *{
     font-weight: 700;
 }
 
-.s6__right .plus {
+.row__plus {
     color: rgba(1, 1, 1, .2);
 }
 
-.s6__number {
+.row__number {
     color: blue;
 }
 
@@ -404,13 +401,11 @@ main > *{
     border-bottom: none;
 }
 
-.section_6 {
-    padding-bottom: 0;
-}
 
 /* 7 */
 /* синий блок */
 .section_7 {
+    padding-top: 0;
     background-color: white;
     color: white;
 }
@@ -472,7 +467,7 @@ main > *{
     width: 70%;
 }
 
-.s7__right > .h3 {
+.s7__right > h3 {
     font-size: 30px;
 }
 
@@ -502,16 +497,12 @@ main > *{
     margin-bottom: 20px;
 }
 
-.section_7 {
-    padding-bottom: 0;
-}
 
 
 /* 8 */
 
-.section_8 .h2 {
-    color: black;
-    margin-bottom: 50px;
+.section_8 {
+    padding-top: 0;
 }
 
 .s8_row {
@@ -531,7 +522,6 @@ main > *{
     width: 100%;
 }
 
-.s8_card .date,
 .s8_card p {
     color: grey;
 }
@@ -565,9 +555,6 @@ footer > * {
 }
 
 
-.footer__left > .h2 {
-    margin-bottom: 30px;
-}
 
 .footer__left > p {
     margin-bottom: 50px;
@@ -595,6 +582,11 @@ footer > * {
 .footer__right > * {
     margin-bottom: 30px;
 }
+
+
+
+
+
 
 @media (max-width: 1500px) {
     .section_4 {
@@ -624,19 +616,19 @@ footer > * {
         font-size: 40px;
     }
 
-    .first_block {
+    .section_1 {
         gap: 3%;
     }
 
-    .first_block__left {
+    .s1__left {
         width: 60%;
     }
 
-    .first_block__left p {
+    .s1__left p {
         width: 90%;
     }
     
-    .first_block__right {
+    .s1__right {
         width: 40%;
     }
 
@@ -661,14 +653,13 @@ footer > * {
         margin: 0 10px;
     }
 
-    .first_block {
+    .section_1 {
         padding-bottom: 50px;
     }
 
     .blocks__left {
         border-right: 1px solid rgba(28,30,83, 0.2);
     }
-
 
     .section_5 {
         gap: 15px;
@@ -699,7 +690,7 @@ footer > * {
         font-size: 30px;
     }
 
-    .second__right .card {
+    .s2__right .card {
         width: 40%;
     }
 
@@ -750,15 +741,15 @@ footer > * {
         margin: 0 5px;
     }
 
-    .first_block {
+    .section_1 {
         padding: 30px 30px 50px;
     }
 
-    .second__right .card {
+    .s2__right .card {
         width: 45%;
     }
 
-    .section_3 .blocks__right__top_box .content {
+    .section_3 .blocks__right__top_box {
         padding-left: 15px;
     }
 
@@ -773,7 +764,7 @@ footer > * {
     }
 
     .section_5 p:first-of-type {
-        text-align: center  ;
+        text-align: center;
     }
     
     .s5__right > p {
@@ -806,22 +797,22 @@ footer > * {
         --padding_all_block: 30px 15px;
     }
 
-    .second {
+    .section_2 {
         flex-direction: column;
         align-items: center;
         gap: 30px;
     }
 
-    .second__left {
+    .s2__left {
         width: 90%;
     }
 
-    .second__left .h2,
-    .second__left p {
+    .s2__left .h2,
+    .s2__left p {
         margin-bottom: 15px;
     }
 
-    .second__right {
+    .s2__right {
         justify-content: center;
         gap: 15px;
     }
@@ -858,16 +849,20 @@ footer > * {
 }
 
 @media (max-width: 700px) {
-    .first_block__left .h2 {
+    .s1__left .h2 {
         margin-bottom: 15px;
     }
 
-    .first_block p {
+    .section_1 p {
         margin-bottom: 30px;
     }
     
     .section_4__cards {
         gap: 10px;
+    }
+
+    .section_6 .row p {
+        font-size: 20px;
     }
 }
 
